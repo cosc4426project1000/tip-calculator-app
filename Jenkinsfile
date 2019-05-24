@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('clone repo and clean it') {
             steps {
+                sh 'rm -rf tip-calculator-app'
                 sh 'git clone https://github.com/cosc4426project1000/tip-calculator-app.git'
                 sh 'mvn clean -f tip-calculator-app'
             }
