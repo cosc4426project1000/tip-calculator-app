@@ -12,4 +12,12 @@
   		<scope>test</scope>
   	</dependency>
   </dependencies>
+  
+	<distributionManagement> 
+		<repository> 
+			<id>internal.repo</id> 
+			<name>Internal repo</name> 
+			<url>file://C:/Users/Admin/git/tip-calculator-app/tip-calculator-app</url> 
+		</repository> 
+	</distributionManagement>
 </project>
