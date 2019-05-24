@@ -46,4 +46,40 @@ public class Money {
     { 
         return (int) (this.totalCents % 100);
     }
+    
+    /**
+     * adds two money values
+     * 
+     * @param a Money, the Money amount to add
+     * @return Money, the sum
+     */
+    public Money add (Money theMoney)
+    {
+        return new Money (this.totalCents + theMoney.totalCents);
+    }
+    
+    /**
+     * get total cents
+	 * @return the totalCents
+	 */
+	public long getTotalCents() {
+		return totalCents;
+	}
+	
+	/**
+     * return String representation of this Money object
+     *
+     * @return a String representation of this object
+     */
+    public String toString()
+    {
+        String result = "$" + this.getDollars() + "."; 
+
+        if (this.getCents() < 10) {
+            result += "0";
+        }
+
+        result += this.getCents();
+        return result;
+    }
 }

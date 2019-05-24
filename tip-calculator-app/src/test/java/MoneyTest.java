@@ -39,4 +39,39 @@ public class MoneyTest {
 		assertEquals(67, money.getCents());
 		
 	}
+	
+	//test add money
+	@Test
+	public void testAddMoneys() {
+		
+		Money money1 = new Money(5, 7);
+		Money money2 = new Money(203);
+		
+		//sum = money1 + money2
+		Money sum = money1.add(money2);
+		
+		assertEquals(7, sum.getDollars());
+		assertEquals(10, sum.getCents());
+		
+	}
+	
+	//test get total cents
+	@Test
+	public void testGetTotalCents() {
+		
+		Money money = new Money(5, 7);
+		
+		assertEquals(507, money.getTotalCents());
+		
+	}
+	
+	//test to string
+	@Test
+	public void testToString() {
+		
+		Money money = new Money(5, 7);
+		
+		assertEquals("$5.07", money.toString());
+		
+	}
 }
