@@ -10,13 +10,17 @@ public class TipCalculatorTest {
 	@Test
 	public void testTipCalculator() {
 		
-		TipCalculator tipCalc = new TipCalculator(new Money(100), 10);
+		//create amount and add some money
+		Money amount = new Money(2000);
+		amount = amount.add(new Money(10, 50));
+		
+		TipCalculator tipCalc = new TipCalculator(amount, 10);
 		
 		//tip
-		assertEquals("$0.10", tipCalc.calculateTip().toString());
+		assertEquals("$3.05", tipCalc.calculateTip().toString());
 		
 		//total after tip
-		assertEquals("$1.10", tipCalc.calculateTotalAfterTip().toString());
+		assertEquals("$33.55", tipCalc.calculateTotalAfterTip().toString());
 		
 		tipCalc = new TipCalculator(new Money(0), 10);
 		
